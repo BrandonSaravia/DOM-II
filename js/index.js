@@ -2,7 +2,7 @@
 
 
 
-
+//////////// Mouseover + Click + Stop Propagation
 let btn = document.querySelectorAll('.btn');
 btn = Array.from(btn);
 btn.forEach((currentValue, index) => {
@@ -11,10 +11,11 @@ btn.forEach((currentValue, index) => {
     })
     currentValue.addEventListener('click', function(e){
         console.log('I am never letting you sign up');  
+        e.stopPropagation();
     })
 })
 
-
+//////////// Dblclick + Prevent Default; 
 let nav = document.querySelectorAll('.nav-link');
 nav = Array.from(nav);
 nav.forEach((currentValue, index) => {
@@ -28,77 +29,68 @@ nav.forEach((currentValue, index) => {
 
 
 
+
+//////////// Keydown + Blur + Focus
 let firstName = document.querySelector('.first-name');
+
 firstName.addEventListener('keydown', function(event){
  console.log(`Typed keys in first name input box : ${event.key}`); 
 });
+firstName.addEventListener('blur', function(){
+    firstName.style.backgroundColor = 'gray'
+});
+firstName.addEventListener('focus', function() {
+    firstName.style.backgroundColor = 'transparent'
+});
 
 
+
+//////////// Keydown
 let lastName = document.querySelector('.last-name');
 lastName.addEventListener('keydown', function(event){
  console.log(`Typed keys in last name input box : ${event.key}`); 
 });
 
 
-
-
+//////////// Scroll + Load + Click2
 window.addEventListener('scroll', function(e) {
     console.log('Scrolled!');
   }
 );
+window.addEventListener("load", function(event) {
+        alert('The Window Has Loaded');
+})
+window.addEventListener("click", function(event) {
+    console.log('Should not show up unless called spicificly')
+})
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const zoom = document.getElementsByClassName('.rounded');
-// zoom.addEventListener('wheel', function(event){
-//     zoom.deltaX = 0*00;
-//     zoom.deltay = 0*00;
-//    });
-
-
-// let drag = document.querySelector('.footer p');
-// drag.addEventListener("drag", function(event) {
-
-// }, false);
-
-// let drop = document.querySelectorAll('.dropzone');
-// drop.addEventListener("drop", function(event) {
-//     event.preventDefault();
-//     if (event.target.className == "dropzone") {
-//       event.target.style.background = "";
-//       dragged.parentNode.removeChild( dragged );
-//       event.target.appendChild( dragged );
-//     }
-//   }, false);
-
-
-
-let container = document.querySelector('.home')
-
-container.addEventListener('blur', function(){
-    container.style.backgroundColor = 'gray'
+//////////// Select
+const input = document.querySelector('input');
+input.addEventListener('select', function(e){
+    console.log('I was selected')
 });
 
-container.addEventListener('focus', function() {
-    container.style.backgroundColor = 'transparent'
+
+
+
+//////////// Resize
+window.addEventListener('resize', function(e){
+    alert('the window was resized');
 });
 
-console.log(container)
+
+
+
+
+
+
+
+
+  
+
+
+
 
 
 

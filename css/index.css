@@ -174,6 +174,10 @@ img {
     margin: 0 5%;
   }
 }
+.dropzone {
+  border: 1px solid black;
+  height: 3rem;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -225,13 +229,6 @@ img {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
-}
-.dropzone {
-  width: 200px;
-  height: 20px;
-  background: blueviolet;
-  margin-bottom: 10px;
-  padding: 10px;
 }
 .home .intro {
   padding: 90px 0 10px;
